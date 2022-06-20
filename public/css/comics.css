@@ -1,0 +1,82 @@
+.main_content {
+  height: 750px;
+  background-color: black;
+  color: white;
+  position: relative;
+  z-index: 150;
+}
+.main_content .container {
+  position: relative;
+}
+.main_content .container .btn {
+  padding: 0.7rem 4rem;
+  background-color: rgb(2, 130, 249);
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 0rem !important;
+}
+.main_content .container .btn_current {
+  transform: translateY(-50%);
+  top: 0;
+  left: -15px;
+}
+.main_content .container .btn_load {
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  padding: 0.5 2rem;
+  transition: ease-in 0.3s;
+}
+.main_content .container .btn_load:hover {
+  border: 1px solid white;
+}
+.main_content .row {
+  margin: 0 -1rem;
+  padding-bottom: 2rem;
+}
+.main_content .col-2 {
+  width: 16.6666666667%;
+  padding: 1rem;
+  margin-top: 2rem;
+  position: relative;
+}
+.main_content img {
+  width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  aspect-ratio: 1/1;
+  transition: linear 0.4s;
+}
+.main_content img:hover {
+  opacity: 0.8;
+}
+.main_content img:hover + .price {
+  display: block;
+}
+.main_content .serie-logo {
+  position: relative;
+}
+.main_content .serie-title {
+  color: white;
+  text-transform: uppercase;
+}
+.main_content .price {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0.5rem 1rem;
+  background-color: rgba(171, 47, 47, 0.911);
+  display: none;
+}
+.main_content img:hover .price {
+  display: block;
+}
+.main_content a {
+  text-decoration: none;
+}
