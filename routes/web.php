@@ -17,18 +17,18 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-/* Route::get('/comics', function () {
-    $comics = config('db.comics');
-    //dd($comics);
-    return view('db', compact('comics'));
-})->name('db'); */
+//Character Views
+
+Route::resource('/admin/characters', 'Admin\CharacterController');
+
+
+//Comics Views
 
 Route::get('/comics', function () {
     $comics = config('db.comics');
     return view('products.index', compact('comics'));
 })->name('products.index');
 
-Route::resource('/admin/characters', 'Admin\CharacterController');
 
 Route::get('/comics/{id}', function ($id) {
     $comics = config('db.comics');
