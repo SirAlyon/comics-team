@@ -18,16 +18,23 @@ Route::get('/', function () {
 })->name('home');
 
 //Character Views
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::resource('characters', 'Admin\CharacterController');
+});
 
-Route::resource('/admin/characters', 'Admin\CharacterController');
+Route::prefix('guest')->name('guest.')->group(function (){
+    Route::resource('characters', 'Guest\CharacterController');;
+});
+
+
 
 
 //Comics Views
 
 Route::get('/comics', function () {
     $comics = config('db.comics');
-    return view('products.index', compact('comics'));
-})->name('products.index');
+    return view('comics.index', compact('comics'));
+})->name('comics.index');
 
 
 Route::get('/comics/{id}', function ($id) {
@@ -36,9 +43,9 @@ Route::get('/comics/{id}', function ($id) {
     if ($id >= 0 && is_numeric($id) && $id < count($comics)){
         $comic = $comics[$id];
         //dd($comics);
-        return view('products.show', compact('comic'));
+        return view('comics.show', compact('comic'));
     }else{
         abort(404);
     }
     
-})->name('products.show');
+})->name('comics.show');

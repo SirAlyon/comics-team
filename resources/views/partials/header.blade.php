@@ -12,16 +12,16 @@
                 <a href="{{ route('home') }}">
                     <img src="{{URL::asset('/img/dc-logo.png')}}" alt="">
                 </a>
-                <a href="" class="{{Route::currentRouteName() === 'products.characters' ? 'active' : '' }}">CHARACTERS</a>
-                <a href="{{ route('products.index') }}" class="{{ Route::currentRouteName() === 'products.index' || Route::currentRouteName() === 'products.show' ? 'active' : '' }}">COMICS</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.movies' ? 'active' : '' }}">MOVIES</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.tv' ? 'active' : '' }}">TV</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.games' ? 'active' : '' }}">GAMES</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.collectables' ? 'active' : '' }}">COLLECTABLES</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.videos' ? 'active' : '' }}">VIDEOS</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.fans' ? 'active' : '' }}">FANS</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.news' ? 'active' : '' }}">NEWS</a>
-                <a href="" class="{{Route::currentRouteName() === 'products.shop' ? 'active' : '' }}">SHOP</a>
+                <a href="{{ route('guest.characters.index') }}" class="{{Route::currentRouteName() === 'guest.characters.index' ? 'active' : '' }}">CHARACTERS</a>
+                <a href="{{ route('comics.index') }}" class="{{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'active' : '' }}">COMICS</a>
+                <a href="{{ route('admin.characters.index') }}" class="{{Route::currentRouteName() === 'comics.movies' ? 'active' : '' }}">MOVIES</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.tv' ? 'active' : '' }}">TV</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.games' ? 'active' : '' }}">GAMES</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.collectables' ? 'active' : '' }}">COLLECTABLES</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.videos' ? 'active' : '' }}">VIDEOS</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.fans' ? 'active' : '' }}">FANS</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.news' ? 'active' : '' }}">NEWS</a>
+                <a href="" class="{{Route::currentRouteName() === 'comics.shop' ? 'active' : '' }}">SHOP</a>
             </nav>
         </div>
     </div>

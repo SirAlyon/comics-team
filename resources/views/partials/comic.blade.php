@@ -1,5 +1,5 @@
 <div class="col-2">
-    <a href="{{route('products.show', $index)}}">
+    <a href="{{route('comics.show', $index)}}">
         <div class="serie-logo">
             <img src="{{$comic['thumb']}}">
             <div class="price">{{$comic['price']}}</div>
