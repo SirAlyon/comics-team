@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+
 use App\Models\Character;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CharacterRequest;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -14,7 +16,8 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        $characters = Character::orderByDesc('id')->get();
+        return view('admin.characters.index', compact('characters'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.characters.create');
     }
 
     /**
@@ -33,9 +36,13 @@ class CharacterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CharacterRequest $request)
     {
-        //
+        
+        $validate_data = $request->validated();
+        Character::create($validate_data);
+
+        return redirect()->route('characters.index');
     }
 
     /**
@@ -46,7 +53,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        //
+        return view('characters.show', $character);
     }
 
     /**
@@ -57,7 +64,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view('admin.characters.edit', compact('character'));
     }
 
     /**
@@ -67,9 +74,13 @@ class CharacterController extends Controller
      * @param  \App\Character  $character
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Character $character)
+    public function update(CharacterRequest $request, Character $character)
     {
-        //
+        $validate_data = $request->validated();
+        Character::create($validate_data);
+
+        $character->update($validate_data);
+        return redirect()->route('characters.show', $character);
     }
 
     /**
