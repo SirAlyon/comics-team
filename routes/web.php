@@ -28,6 +28,8 @@ Route::get('/comics', function () {
     return view('products.index', compact('comics'));
 })->name('products.index');
 
+Route::resource('/admin/characters', 'Admin\CharacterController');
+
 Route::get('/comics/{id}', function ($id) {
     $comics = config('db.comics');
     
