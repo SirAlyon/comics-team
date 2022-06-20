@@ -213,5 +213,26 @@ return [
                 "Joëlle Jones"
             ],
         ],
+    ],
+    'characters' => [
+        [
+            'name' => 'Batman',
+            'description' => 'lorem ipsum',
+            'thumb' => 'https://static.wikia.nocookie.net/marvel_dc/images/4/4b/Batman_Vol_3_86_Textless.jpg/revision/latest?cb=20200502132734',
+            'powers' => 'no powers',
+        ],
+        [
+            'name' => 'Superman',
+            'description' => 'lorem ipsum',
+            'thumb' => 'https://www.fumettologica.it/wp-content/uploads/2020/12/superman-red-blue-gary-frank.jpg',
+            'powers' => 'super forza',
+        ],
+        [
+            'name' => 'Lanterna Verde',
+            'description' => 'lorem ipsum',
+            'thumb' => 'https://i.pinimg.com/550x/de/67/d5/de67d5f7bef13e4161113f483f8d9460.jpg',
+            'powers' => 'Anello',
+        ],
+
     ]
 ];
