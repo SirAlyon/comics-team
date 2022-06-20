@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('custom-css')
+<link rel="stylesheet" href="{{asset('css/single-comic.css')}}">
+@endsection
+
 @section('content')
 <div class="container character">
     <h1>{{$character->name}}</h1>

@@ -2,6 +2,8 @@
 
 @section('custom-css')
 <link rel="stylesheet" href="{{asset('css/comics.css')}}">
+<link rel="stylesheet" href="{{asset('css/single-comic.css')}}">
+
 @endsection
 
 @section('jumbotron')
@@ -15,15 +17,17 @@
     <div class="container">
         <div class="row">
             @forelse($characters as $character)
-                <a href="{{route ('guest.characters.show', $character->id)}}">
+                
                     <div class="col-2">
                         <div class="serie-logo">
-                            <img src="{{$character['thumb']}}">
+                            <a href="{{route ('guest.characters.show', $character->id)}}">
+                                <img src="{{$character['thumb']}}">
+                            </a>
                             <div class="price">{{$character['price']}}</div>
                         </div>
                     <div class="serie-title mt-2">{{$character['title']}}</div>
                 </div>
-                </a>
+
                 
                 @empty
                 <h2>Nothing to show here...</h2>

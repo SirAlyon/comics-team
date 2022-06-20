@@ -8,7 +8,7 @@
     <h1> Edit {{$character->title}}</h1>
     @include('partials.errors')
     <!-- Puntare il form alla rotta POST store -->
-    <form action="{{route('characters.update', $character->id)}}" method="post">
+    <form action="{{route('admin.characters.update', $character->id)}}" method="post">
         @csrf
         @method('PUT')
 

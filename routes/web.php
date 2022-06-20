@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-//Guest Character views
-
-Route::get('/guest/characters', 'Guest\CharacterController@index');
-Route::get('/guest/characters/{character}', 'Guest\CharacterController@show');
 
 //Character Views
 Route::prefix('admin')->name('admin.')->group(function (){
@@ -28,7 +24,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
 });
 
 Route::prefix('guest')->name('guest.')->group(function (){
-    Route::resource('characters', 'Guest\CharacterController');;
+    Route::resource('characters', 'Guest\CharacterController');
 });
 
 

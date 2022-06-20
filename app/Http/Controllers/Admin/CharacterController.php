@@ -81,7 +81,7 @@ class CharacterController extends Controller
         Character::create($validate_data);
 
         $character->update($validate_data);
-        return redirect()->route('characters.show', $character);
+        return redirect()->route('admin.characters.show', $character);
     }
 
     /**
@@ -92,6 +92,7 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
-        //
+        $character->delete();
+        return redirect()->route('admin.characters.index');
     }
 }

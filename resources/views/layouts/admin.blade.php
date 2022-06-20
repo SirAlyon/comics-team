@@ -19,16 +19,7 @@
 
     <header>
 
-        <div class="logo">
-
-            COMICS
-
-        </div>
-
-        <nav class="nav justify-content-center">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link active" href="#">Characters</a>
-        </nav>
+        @include('partials.header')
 
     </header>
 
@@ -39,6 +30,7 @@
     </main>
 
 
+    <script src="{{asset('js/app.js')}}"></script>
 
 </body>
 
