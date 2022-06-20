@@ -150,3 +150,22 @@ footer {
         }
     }
 }
+
+
+/* Section Characters Guest */
+
+section.characters {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+
+.container.characters {
+    img {
+        max-width: 100%;
+        aspect-ratio: 16/9;
+        height: 350px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
