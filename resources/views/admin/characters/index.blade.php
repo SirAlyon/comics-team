@@ -7,33 +7,34 @@
     <table class="table">
         <thead>
             <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>thumb</th>
-                <th>powers</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Thumb</th>
+                <th>Powers</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
 
             @forelse ($characters as $character)
             <tr>
-                <td scope="row"></td>
                 <td>{{$character->id}}</td>
                 <td>{{$character->name}}</td>
-                <td><img class="img-fluid" src="{{$character->thumb}}" alt=""></td>
+                <td><img height="60" src="{{$character->thumb}}" alt=""></td>
                 <td>{{$character->powers}}</td>
 
                 <td>
-                    <a href="#">view</a>
-                    <a href="#">edit</a>
+                    <a href="#">View</a>
+                    <a href="#">Edit</a>
 
-                    delete
+                    Delete
 
                 </td>
 
             </tr>   
             @empty
+
+            <div>Nothing to show!</div>
                 
             @endforelse
             
