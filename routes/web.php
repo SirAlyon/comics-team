@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 //Admin Views
 
-Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
+Route::middleware('auth')->prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
     Route::get('/', 'HomeController@index')->name('dashboard');
     Route::resource('characters', 'CharacterController');
 });
