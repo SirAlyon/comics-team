@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +50,7 @@ Route::get('/comics/{id}', function ($id) {
     }
     
 })->name('comics.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
