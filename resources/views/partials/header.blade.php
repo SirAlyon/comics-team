@@ -12,7 +12,7 @@
                 <a href="{{ route('home') }}">
                     <img src="{{URL::asset('/img/dc-logo.png')}}" alt="">
                 </a>
-                <a href="{{ route('admin.characters.index') }}" class="{{Route::currentRouteName() === 'admin.characters.index' ? 'active' : '' }}">ADMIN PANEL</a>
+                {{-- <a href="{{ route('') }}" class="{{Route::currentRouteName() === '' ? 'active' : '' }}">ADMIN PANEL</a> --}}
                 <a href="{{ route('guest.characters.index') }}" class="{{Route::currentRouteName() === 'guest.characters.index' ? 'active' : '' }}">CHARACTERS</a>
                 <a href="{{ route('comics.index') }}" class="{{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'active' : '' }}">COMICS</a>
                 <a href="#" class="{{Route::currentRouteName() === 'comics.movies' ? 'active' : '' }}">MOVIES</a>

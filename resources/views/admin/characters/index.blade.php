@@ -4,6 +4,10 @@
     
     <h1>All Characters</h1>
 
+    <a href="{{route('admin.characters.create')}}">
+        <button type="submit" class="btn btn-primary">Create Character</button>
+    </a>
+
     <table class="table">
         <thead>
             <tr>
