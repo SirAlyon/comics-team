@@ -29,25 +29,25 @@
                         <div class="position-sticky pt-3">
                           <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="">
+                              <a class="nav-link active" aria-current="page" href="{{route('admin.dashboard')}}">
                                 
                                 Dashboard
                               </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">
-                                  Posts
+                                <a class="nav-link" href="{{route('admin.characters.index')}}">
+                                  Characters
                                 </a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="">
-                                Categories
+                              <a class="nav-link" href="{{route('admin.comics.index')}}">
+                                Comics
                               </a>
                           </li>
             
                           <li class="nav-item">
                             <a class="nav-link" href="">
-                              Tags
+                              Series
                             </a>
                         </li>
                           </ul>
