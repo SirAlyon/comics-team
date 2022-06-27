@@ -20,6 +20,7 @@ class CharacterSeeder extends Seeder
             $new_character->description = $character['description'];
             $new_character->thumb = $character['thumb'];
             $new_character->powers = $character['powers'];
+            
             $new_character->save();
         }
 

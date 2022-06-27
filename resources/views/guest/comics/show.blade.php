@@ -50,54 +50,9 @@
 <div class="full-infos">
     <div class="container">
         <div class="row gx-5">
-            <div class="col-6">
-                <h4>Talent</h4>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-3">Art by:</div>
-                        <div class="col-9">
 
-                            @forelse($comic['artists'] as $artist)
-                                @if(!$loop->last)
-                                    <a href="">{{$artist}}</a>,
-                                @else
-                                    <a href="">{{$artist}}</a>
-                                @endif
-                            
-                            @empty
-                            <span>No artists to show...</span>
-                            @endforelse
-
-                        </div>
-                        <div class="col-3">Written by:</div>
-                        <div class="col-9">
-
-                            @forelse($comic['writers'] as $writer)
-                                @if(!$loop->last)
-                                    <a href="">{{$writer}}</a>,
-                                @else
-                                    <a href="">{{$writer}}</a>
-                                @endif
-                            @empty
-                            <span>No artists to show...</span>
-                            @endforelse
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
+            <div class="col-12">
                 <h4>Specs</h4>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-3">
-                            Series:
-                        </div>
-                        <div class="col-3">
-                            <a href="">{{$comic['series']}}</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12">
                     <div class="row">
                         <div class="col-3">U.S. Price:</div>
