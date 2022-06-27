@@ -13,14 +13,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+Auth::routes();
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
 
-//Character Views
-Route::prefix('admin')->name('admin.')->group(function (){
-    Route::resource('characters', 'Admin\CharacterController');
+//Admin Views
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
+    Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::resource('characters', 'CharacterController');
 });
 
 Route::prefix('guest')->name('guest.')->group(function (){
@@ -51,6 +57,4 @@ Route::get('/comics/{id}', function ($id) {
     
 })->name('comics.show');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
