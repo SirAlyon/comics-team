@@ -5,7 +5,7 @@
 <div class="container">
   <h1>Create a new character</h1>
   @include('partials.errors')
-  <form action="{{route('characters.store')}}" method="post">
+  <form action="{{route('admin.characters.store')}}" method="post">
     @csrf
     <div class="mb-3">
       <label for="name" class="form-label"></label>
