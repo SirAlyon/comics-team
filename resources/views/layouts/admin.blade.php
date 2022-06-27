@@ -18,14 +18,48 @@
     
 
     <header>
-
         @include('partials.header')
-
     </header>
 
     <main>
-
-        @yield('content')
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-3">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                        <div class="position-sticky pt-3">
+                          <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{{route('admin.dashboard')}}">
+                                
+                                Dashboard
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.characters.index')}}">
+                                  Characters
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('admin.comics.index')}}">
+                                Comics
+                              </a>
+                          </li>
+            
+                          <li class="nav-item">
+                            <a class="nav-link" href="">
+                              Series
+                            </a>
+                        </li>
+                          </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-9">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+        
 
     </main>
 

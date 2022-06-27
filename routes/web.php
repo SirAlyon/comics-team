@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Auth::routes();
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
 
-//Character Views
-Route::prefix('admin')->name('admin.')->group(function (){
-    Route::resource('characters', 'Admin\CharacterController');
+//Admin Views
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
+    Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::resource('characters', 'CharacterController');
+    Route::resource('comics', 'CharacterController');
+
 });
 
-Route::prefix('guest')->name('guest.')->group(function (){
-    Route::resource('characters', 'Guest\CharacterController');
+Route::prefix('guest')->name('guest.')->namespace('Guest')->group(function (){
+    Route::resource('characters', 'CharacterController');
+    Route::resource('comics', 'ComicController');
+
 });
 
 
@@ -32,7 +42,7 @@ Route::prefix('guest')->name('guest.')->group(function (){
 
 //Comics Views
 
-Route::get('/comics', function () {
+/* Route::get('/comics', function () {
     $comics = config('db.comics');
     return view('comics.index', compact('comics'));
 })->name('comics.index');
@@ -50,3 +60,5 @@ Route::get('/comics/{id}', function ($id) {
     }
     
 })->name('comics.show');
+ 
+
